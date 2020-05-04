@@ -1,0 +1,18 @@
+{
+  "name": "SPIdevlib-Core",
+  "keywords": "spidevlib, spi",
+  "description": "The SPI Device Library (SPIdevlib) is a simple and intuitive interfaces to SPI arduino devices.",
+  "include": "Arduino/SPIdev",
+  "repository":
+  {
+    "type": "git",
+    "url": "https://github.com/racarla96/spidevlib.git"
+  },
+  "frameworks": "arduino",
+  "platforms": "atmelavr",
+   "dependencies": [
+     {
+        "name": "SPI"
+     }
+  ]
+}
