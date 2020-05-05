@@ -18,7 +18,5 @@ For compatibility with I2C interface. We use the similar interface but ignoring 
 
 [I2Cdev Library](https://github.com/jrowberg/i2cdevlib)
 
-[MPU](https://github.com/bolderflight/MPU9250/blob/master/src/MPU9250.cpp)
+[MPU 9250](https://github.com/bolderflight/MPU9250)
 
-## TODO:
-- Real test with MPU6050
