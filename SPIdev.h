@@ -53,29 +53,31 @@ SOFTWARE.
 
 class SPIdev {
     public:
-        static uint8_t slave;
-        static uint8_t dataOrder;
-        static SPISettings settings;
+        uint8_t slave;
+        uint8_t dataOrder;
+        SPISettings settings;
 
         SPIdev(int8_t slavePin, SPISettings settings, uint8_t bitOrder);
 
-        static int8_t readBit(uint8_t regAddr, uint8_t bitNum, uint8_t *data);
-        static int8_t readBitW(uint8_t regAddr, uint8_t bitNum, uint16_t *data);
-        static int8_t readBits(uint8_t regAddr, uint8_t bitStart, uint8_t length, uint8_t *data);
-        static int8_t readBitsW(uint8_t regAddr, uint8_t bitStart, uint8_t length, uint16_t *data);
-        static int8_t readByte(uint8_t regAddr, uint8_t *data);
-        static int8_t readWord(uint8_t regAddr, uint16_t *data);
-        static int8_t readBytes(uint8_t regAddr, uint8_t length, uint8_t *data);
-        static int8_t readWords(uint8_t regAddr, uint8_t length, uint16_t *data);
+        void setSPISettings(SPISettings settings);
 
-        static bool writeBit(uint8_t regAddr, uint8_t bitNum, uint8_t data);
-        static bool writeBitW(uint8_t regAddr, uint8_t bitNum, uint16_t data);
-        static bool writeBits(uint8_t regAddr, uint8_t bitStart, uint8_t length, uint8_t data);
-        static bool writeBitsW(uint8_t regAddr, uint8_t bitStart, uint8_t length, uint16_t data);
-        static bool writeByte(uint8_t regAddr, uint8_t data);
-        static bool writeWord(uint8_t regAddr, uint16_t data);
-        static bool writeBytes(uint8_t regAddr, uint8_t length, uint8_t *data);
-        static bool writeWords(uint8_t regAddr, uint8_t length, uint16_t *data);
+        int8_t readBit(uint8_t regAddr, uint8_t bitNum, uint8_t *data);
+        int8_t readBitW(uint8_t regAddr, uint8_t bitNum, uint16_t *data);
+        int8_t readBits(uint8_t regAddr, uint8_t bitStart, uint8_t length, uint8_t *data);
+        int8_t readBitsW(uint8_t regAddr, uint8_t bitStart, uint8_t length, uint16_t *data);
+        int8_t readByte(uint8_t regAddr, uint8_t *data);
+        int8_t readWord(uint8_t regAddr, uint16_t *data);
+        int8_t readBytes(uint8_t regAddr, uint8_t length, uint8_t *data);
+        int8_t readWords(uint8_t regAddr, uint8_t length, uint16_t *data);
+
+        bool writeBit(uint8_t regAddr, uint8_t bitNum, uint8_t data);
+        bool writeBitW(uint8_t regAddr, uint8_t bitNum, uint16_t data);
+        bool writeBits(uint8_t regAddr, uint8_t bitStart, uint8_t length, uint8_t data);
+        bool writeBitsW(uint8_t regAddr, uint8_t bitStart, uint8_t length, uint16_t data);
+        bool writeByte(uint8_t regAddr, uint8_t data);
+        bool writeWord(uint8_t regAddr, uint16_t data);
+        bool writeBytes(uint8_t regAddr, uint8_t length, uint8_t *data);
+        bool writeWords(uint8_t regAddr, uint8_t length, uint16_t *data);
 
         /*
             For compatibility with I2C interface
@@ -83,28 +85,26 @@ class SPIdev {
             with the intention of having compatibility with sensors in I2Cdev library 
             that have I2C and SPI interface
             https://github.com/jrowberg/i2cdevlib/blob/master/Arduino/I2Cdev/I2Cdev.h
-            https://github.com/bolderflight/MPU9250/blob/master/src/MPU9250.cpp
         */
         static uint16_t readTimeout;
         
-        static int8_t readBit(uint8_t devAddr, uint8_t regAddr, uint8_t bitNum, uint8_t *data, uint16_t timeout=SPIdev::readTimeout);
-        static int8_t readBitW(uint8_t devAddr, uint8_t regAddr, uint8_t bitNum, uint16_t *data, uint16_t timeout=SPIdev::readTimeout);
-        static int8_t readBits(uint8_t devAddr, uint8_t regAddr, uint8_t bitStart, uint8_t length, uint8_t *data, uint16_t timeout=SPIdev::readTimeout);
-        static int8_t readBitsW(uint8_t devAddr, uint8_t regAddr, uint8_t bitStart, uint8_t length, uint16_t *data, uint16_t timeout=SPIdev::readTimeout);
-        static int8_t readByte(uint8_t devAddr, uint8_t regAddr, uint8_t *data, uint16_t timeout=SPIdev::readTimeout);
-        static int8_t readWord(uint8_t devAddr, uint8_t regAddr, uint16_t *data, uint16_t timeout=SPIdev::readTimeout);
-        static int8_t readBytes(uint8_t devAddr, uint8_t regAddr, uint8_t length, uint8_t *data, uint16_t timeout=SPIdev::readTimeout);
-        static int8_t readWords(uint8_t devAddr, uint8_t regAddr, uint8_t length, uint16_t *data, uint16_t timeout=SPIdev::readTimeout);
+        int8_t readBit(uint8_t devAddr, uint8_t regAddr, uint8_t bitNum, uint8_t *data, uint16_t timeout=SPIdev::readTimeout);
+        int8_t readBitW(uint8_t devAddr, uint8_t regAddr, uint8_t bitNum, uint16_t *data, uint16_t timeout=SPIdev::readTimeout);
+        int8_t readBits(uint8_t devAddr, uint8_t regAddr, uint8_t bitStart, uint8_t length, uint8_t *data, uint16_t timeout=SPIdev::readTimeout);
+        int8_t readBitsW(uint8_t devAddr, uint8_t regAddr, uint8_t bitStart, uint8_t length, uint16_t *data, uint16_t timeout=SPIdev::readTimeout);
+        int8_t readByte(uint8_t devAddr, uint8_t regAddr, uint8_t *data, uint16_t timeout=SPIdev::readTimeout);
+        int8_t readWord(uint8_t devAddr, uint8_t regAddr, uint16_t *data, uint16_t timeout=SPIdev::readTimeout);
+        int8_t readBytes(uint8_t devAddr, uint8_t regAddr, uint8_t length, uint8_t *data, uint16_t timeout=SPIdev::readTimeout);
+        int8_t readWords(uint8_t devAddr, uint8_t regAddr, uint8_t length, uint16_t *data, uint16_t timeout=SPIdev::readTimeout);
 
-        static bool writeBit(uint8_t devAddr, uint8_t regAddr, uint8_t bitNum, uint8_t data);
-        static bool writeBitW(uint8_t devAddr, uint8_t regAddr, uint8_t bitNum, uint16_t data);
-        static bool writeBits(uint8_t devAddr, uint8_t regAddr, uint8_t bitStart, uint8_t length, uint8_t data);
-        static bool writeBitsW(uint8_t devAddr, uint8_t regAddr, uint8_t bitStart, uint8_t length, uint16_t data);
-        static bool writeByte(uint8_t devAddr, uint8_t regAddr, uint8_t data);
-        static bool writeWord(uint8_t devAddr, uint8_t regAddr, uint16_t data);
-        static bool writeBytes(uint8_t devAddr, uint8_t regAddr, uint8_t length, uint8_t *data);
-        static bool writeWords(uint8_t devAddr, uint8_t regAddr, uint8_t length, uint16_t *data);
-
+        bool writeBit(uint8_t devAddr, uint8_t regAddr, uint8_t bitNum, uint8_t data);
+        bool writeBitW(uint8_t devAddr, uint8_t regAddr, uint8_t bitNum, uint16_t data);
+        bool writeBits(uint8_t devAddr, uint8_t regAddr, uint8_t bitStart, uint8_t length, uint8_t data);
+        bool writeBitsW(uint8_t devAddr, uint8_t regAddr, uint8_t bitStart, uint8_t length, uint16_t data);
+        bool writeByte(uint8_t devAddr, uint8_t regAddr, uint8_t data);
+        bool writeWord(uint8_t devAddr, uint8_t regAddr, uint16_t data);
+        bool writeBytes(uint8_t devAddr, uint8_t regAddr, uint8_t length, uint8_t *data);
+        bool writeWords(uint8_t devAddr, uint8_t regAddr, uint8_t length, uint16_t *data);
 };
 
 #endif

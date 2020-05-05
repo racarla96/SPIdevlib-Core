@@ -36,6 +36,9 @@ SOFTWARE.
 #include "SPIdev.h"
 
 /** Default constructor.
+ * @param slavePin arduino pin for spi slave sensor selection
+ * @param settings SPISettings from https://www.arduino.cc/en/Reference/SPISettings
+ * @param bitOrder dataOrder: MSBFIRST or LSBFIRST from https://www.arduino.cc/en/Reference/SPISettings
  */
 SPIdev::SPIdev(int8_t slavePin, SPISettings settings, uint8_t bitOrder) {
     // Slave Pin
@@ -47,6 +50,13 @@ SPIdev::SPIdev(int8_t slavePin, SPISettings settings, uint8_t bitOrder) {
     // Settings
     settings = settings;
     dataOrder = bitOrder;
+}
+
+/** Set new SPISettings for the sensor
+ * @param settings SPISettings from https://www.arduino.cc/en/Reference/SPISettings
+ */
+void SPIdev::setSPISettings(SPISettings settings) {
+    settings = settings;
 }
 
 /** Read a single bit from an 8-bit device register.

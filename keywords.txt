@@ -5,13 +5,16 @@
 #######################################
 # Datatypes (KEYWORD1)
 #######################################
+
 SPIdev	KEYWORD1
 
 #######################################
 # Methods and Functions (KEYWORD2)
 #######################################
 
-readBit	    KEYWORD2
+setSPISettings	KEYWORD2
+readBit	KEYWORD2
+readBit	KEYWORD2
 readBitW	KEYWORD2
 readBits	KEYWORD2
 readBitsW	KEYWORD2

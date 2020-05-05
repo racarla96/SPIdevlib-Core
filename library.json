@@ -1,19 +1,38 @@
 {
   "name": "SPIdevlib-Core",
-  "keywords": "spidevlib, spi",
+  "version": "0.1",
   "description": "The SPI Device Library (SPIdevlib) is a simple and intuitive interfaces to SPI arduino devices.",
-  "include": "Arduino/SPIdev",
+  "keywords": "spidevlib, spi, arduino",
+  "authors":
+  {
+      "name": "Rafael Carbonell",
+      "email": "casracarla@gmail.com",
+      "maintainer": true
+  },
   "repository":
   {
     "type": "git",
     "url": "https://github.com/racarla96/SPIdevlib-core.git"
   },
+  "license": "MIT",
+  "homepage": "https://github.com/racarla96/SPIdevlib-core",
+  "export": {
+    "include":
+    [
+      "Arduino/SPIdev"
+    ]
+  },
+  "frameworks": "arduino",
+  "platforms": ["atmelavr", "atmelmegaavr", "atmelsam"],
   "dependencies": [
      {
         "name": "SPI",
-    	"frameworks": "arduino"   
+    	  "frameworks": "arduino"   
      }
   ],
-  "frameworks": "arduino",
-  "platforms": "atmelavr"
+  "examples": [
+    "[Ee]xamples/*/*.h",
+    "[Ee]xamples/*/*.cpp",
+    "[Ee]xamples/*/*.ino"
+  ]
 }
