@@ -12,10 +12,10 @@
   "repository":
   {
     "type": "git",
-    "url": "https://github.com/racarla96/SPIdevlib-core.git"
+    "url": "https://github.com/racarla96/SPIdevlib-Core.git"
   },
   "license": "MIT",
-  "homepage": "https://github.com/racarla96/SPIdevlib-core",
+  "homepage": "https://github.com/racarla96/SPIdevlib-Core",
   "export": {
     "include":
     [
